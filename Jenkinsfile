@@ -6,10 +6,5 @@ pipeline {
         sh 'mvn -v'
       }
     }
-    stage('Read Pom File') {
-      steps {
-        readMavenPom(file: 'pom.xml')
-      }
-    }
   }
 }
