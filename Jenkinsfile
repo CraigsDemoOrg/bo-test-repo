@@ -1,9 +1,18 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('Stage 1') {
       steps {
-        sh 'mvn -v'
+        parallel(
+          "Stage 1": {
+            sh 'mvn -v'
+            
+          },
+          "Stage 1a": {
+            sh 'java -version'
+            
+          }
+        )
       }
     }
   }
